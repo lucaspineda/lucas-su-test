@@ -1,8 +1,12 @@
+import {useState} from 'react'
+
 function Profile() {
+
+const [name, setName] = useState('')
     return (
         <div>
-            <label>Name:</label>
-            <input type="text"></input>
+            <label>Name: {name}</label>
+            <input type="text" value={name} onChange={(e) => setName(e.target.value)}></input>
         </div>
     )
     

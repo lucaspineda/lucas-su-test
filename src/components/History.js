@@ -1,11 +1,18 @@
+import { useState } from "react";
+
 function Profile() {
-    return (
-        <div>
-            <label>Date:</label>
-            <input type="date"></input>
-        </div>
-    )
-    
+  const [date, setDate] = useState("");
+
+  const handleDate = (e) => {
+    setDate(e.target.value)
+  }
+
+  return (
+    <div>
+      <label>Date: {date}</label>
+      <input value={date} onChange={(e) => handleDate(e)} type="date"></input>
+    </div>
+  );
 }
 
-export default Profile
+export default Profile;
